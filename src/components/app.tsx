@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import Card from './card';
 import TextEditor from './texteditor';
-
+import MessageCard from './messagecard/msgcard';
 export interface Page {
   color: string;
 }
@@ -16,7 +16,7 @@ export class App extends React.Component<Page, {}> {
     return (
       <div className='pagecontainer'>
         <TextEditor></TextEditor>
-        
+        <MessageCard></MessageCard>
         <div className="cardcontainer">
           <Card></Card><Card></Card><Card></Card><Card></Card>
           <Card></Card><Card></Card><Card></Card><Card></Card>

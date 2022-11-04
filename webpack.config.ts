@@ -40,7 +40,7 @@ const commonConfig: Configuration = {
       model: path.resolve(__dirname, "./src/model"),
     },
     //Add resolving for ts and tsx extensions
-    extensions: ['.ts', '.tsx', '.js', '.jsx','.less'],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".less"],
     modules: ["node_modules", resolveApp("node_modules")],
     fallback: {
       fs: false,
@@ -112,6 +112,5 @@ rendererConfig.plugins = [
     React: "react",
   }),
 ];
-//https://github.com/Devtography/electron-react-typescript-webpack-boilerplate/blob/master/package.json
 
 module.exports = [rendererConfig];
