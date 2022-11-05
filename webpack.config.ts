@@ -8,6 +8,7 @@ import * as path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import lodash from "lodash";
 import { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import CopyPlugin from "copy-webpack-plugin";
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = (relativePath: string) =>
@@ -111,6 +112,12 @@ rendererConfig.plugins = [
   new webpack.ProvidePlugin({
     React: "react",
   }),
+  new CopyPlugin({
+    patterns: [
+      { from: path.resolve(__dirname, "./public/index.css"), to: path.resolve(__dirname, "dist/index.css") },
+      { from: path.resolve(__dirname, "./public/content"), to: path.resolve(__dirname, "dist/content") },
+    ],
+  })
 ];
 
 module.exports = [rendererConfig];
