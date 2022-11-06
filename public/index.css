@@ -1,3 +1,9 @@
+body {
+  background: #f2f2f2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
 nav {
     width: 100%;
     display: flex;
@@ -5,11 +11,14 @@ nav {
     align-items: center;
   }
   
-  nav > h1 {
+  header > h1 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     font-size: 4em; 
+    color: ghostwhite;
+    font-family: 'Sacramento', cursive;
+
   }
 
 .site-background {
@@ -17,4 +26,22 @@ nav {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.titlebar{
+  background-color: #214261;
+  width: 100%;
+  max-height: 150px;
+}
+.main-content {
+  padding: 10px;
+  background-color: #f8f8ff7a;
+  max-width: 75em;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  margin: 5%;  
+  color: #000000;
 }
