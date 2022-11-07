@@ -1,37 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 body {
   background: #f2f2f2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
 }
-nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  header > h1 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 4em; 
-    color: ghostwhite;
-    font-family: 'Sacramento', cursive;
 
-  }
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header>h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4em;
+  color: ghostwhite;
+  font-family: 'Sacramento', cursive;
+}
 
 .site-background {
-    background-image: url("./content/beachbg.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("./content/beachbg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.titlebar{
+
+.titlebar {
   background-color: #214261;
   width: 100%;
-  max-height: 150px;
 }
+
 .main-content {
   padding: 10px;
   background-color: #f8f8ff7a;
@@ -42,6 +57,144 @@ nav {
 }
 
 .content {
-  margin: 5%;  
+  margin: 5%;
   color: #000000;
+}
+
+/* */
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 2em;
+  color: ghostwhite;
+  font-family: 'Sacramento', cursive;
+}
+
+.menu li:hover {
+  background-color: #4c9e9e;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+/* DROPDOWN MENU */
+.services {
+  position: relative;
+}
+
+.dropdown {
+  font-size: .75em;
+  background-color: #214261d1;
+  transition: 0.3s ease;
+  padding: 1em 0;
+  position: absolute;
+  /*WITH RESPECT TO PARENT*/
+  display: none;
+  border-radius: 8px;
+  top: 52px;
+  z-index: 99;
+}
+
+.dropdown li+li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+.dropdown li:hover {
+  font-size: .75em;
+  background-color: #214261d1;
+  z-index: 99;
+}
+
+.services:hover .dropdown {
+  display: block;
+}
+
+
+/**** New */
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox] {
+  display: none;
+}
+
+/*HAMBURGER MENU*/
+.hamburger {
+  display: none;
+  font-size:40px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  header>h1 {
+    font-size: 3em;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    font-size: 1.5em;
+    background-color: #214261d1;
+    z-index: 99;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #4c9e9e;
+    transition: 0.3s ease;
+  }
+
+  .menu li+li {
+    margin-top: 12px;
+  }
+
+  input[type=checkbox]:checked~.menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+    background-color: #4c9e9e;
+  }
 }

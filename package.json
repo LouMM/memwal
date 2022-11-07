@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": ".\\node_modules\\.bin\\webpack --progress --color --mode development",
-    "start": "cross-env PUBLIC_URL='https://cdnjs.cloudflare.com/ajax/libs' && .\\node_modules\\.bin\\webpack-dev-server",
-    "postinstall": "ts-node ./postinstall.ts",
+    "build": "rimraf dist && webpack --progress --color --mode development",
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
