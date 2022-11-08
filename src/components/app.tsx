@@ -15,13 +15,14 @@ export class App extends React.Component<Page, {}> {
 
     return (
       <div className='pagecontainer'>
-        <TextEditor></TextEditor>
+      
         <MessageCard></MessageCard>
         <div className="cardcontainer">
           <Card></Card><Card></Card><Card></Card><Card></Card>
           <Card></Card><Card></Card><Card></Card><Card></Card>
           <Card></Card><Card></Card><Card></Card><Card></Card>
         </div>
+        <TextEditor></TextEditor>
       </div>
     );
   }
